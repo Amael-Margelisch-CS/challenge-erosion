@@ -17,6 +17,7 @@ def load_pbm(filename: str) -> list[list[int]]:
             if entry == 1:
                 img_dim = list((info.strip("\n")).split(" "))           
     f.close()
+    
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
