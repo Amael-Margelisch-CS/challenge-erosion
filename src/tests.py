@@ -1,8 +1,7 @@
 import unittest
 import os
 
-from utils import img2ascii
-from utils import load_pbm
+from utils import img2ascii, load_pbm
 
 img = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -28,7 +27,7 @@ class MyTests(unittest.TestCase):
     def test_1(self):
         for img, black, white, expected in tests:
             black = black or '#'
-            white = white or '.'cd
+            white = white or '.'
             result = img2ascii(img, black, white)
             self.assertEqual(result, expected)
 
