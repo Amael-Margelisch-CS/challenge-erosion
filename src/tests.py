@@ -1,6 +1,8 @@
 import unittest
+import os
 
 from utils import img2ascii
+from utils import load_pbm
 
 img = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -26,12 +28,11 @@ class MyTests(unittest.TestCase):
     def test_1(self):
         for img, black, white, expected in tests:
             black = black or '#'
-            white = white or '.'
+            white = white or '.'cd
             result = img2ascii(img, black, white)
             self.assertEqual(result, expected)
 
-
-tests = [
+tests_load_bpm = [
     ['circle-nb.pbm', [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
@@ -53,7 +54,8 @@ class TestLoadPBM(unittest.TestCase):
 
     def test_1(self):
 
-        for filename, expected in tests:
+        for filename, expected in tests_load_bpm:
+            path = os.path.join('data', filename)
             result = load_pbm(filename)
             feedback = f"Le fichier filename={filename} est chargé correctement"
             self.assertEqual(result, expected, feedback)
