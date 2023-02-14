@@ -15,8 +15,9 @@ def load_pbm(filename: str) -> list[list[int]]:
     with open(filename,'r') as f:
         for entry, info in enumerate (f):
             if entry == 1:
-                img_dim = list((info.strip("\n")).split(" "))           
+                img_dim = list((info.strip("\n")).split(" "))                    
     f.close()
+    
     
 if __name__ == '__main__':
     import doctest
